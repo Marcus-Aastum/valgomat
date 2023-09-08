@@ -2,8 +2,21 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .image-container {
-    float: right;
-  }
+  text-align: center;
+  width: 70%;
+}
+.images{
+  display: inline;
+  right: 20px;
+  width: 20%;
+  float: right;
+  margin-right: 10%;
+}
+.valgomat{
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+}
 
   input[type="radio"] {
     display: none; /* Hide the default radio button */
