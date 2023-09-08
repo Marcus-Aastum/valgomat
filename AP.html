@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tittel på nettsideurlen -->
     <title>AP Valgomat</title>
+
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+              localStorage.clickcount = Number(localStorage.clickcount)+5;
+            } else {
+              localStorage.clickcount = 5;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            document.getElementById("result2").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            document.getElementById("result3").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+        </script>
+
     <link rel="stylesheet" type="text/css" href="AP.css">
 </head>
 <body>
     <!-- Overskrift på nettsiden -->
     <h1 Id="myTitle">Arbeiderpartiets/AP Valgomat</h1>
+    <p><button onclick="clickCounter()" type="button">Enig</button></p>
+    <div id="result"></div>
+    <p><button onclick="clickCounter()" type="button">Nøytral</button></p>
+    <div id="result2"></div>
+    <p><button onclick="clickCounter()" type="button">Uenig</button></p>
+    <div id="result3"></div>
+
     <!-- Bilde på nettsiden -->
     <div class="valgomat">
         
