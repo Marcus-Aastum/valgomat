@@ -4,11 +4,8 @@ textElement.style.color = "red";
 prevButton = 0;
 
 //Skift disse to til arrays
-const userinput = {};
-const apmening = {
-    0: 0,
-    1: 0
-};
+const userinput = [];
+const apmening = [2, 5];
 function test(input){
 
     console.log(input.parentNode.parentNode.id);
@@ -25,12 +22,23 @@ function test(input){
         default:
             break;
     }
-    console.log(userinput, Object.keys(userinput), Object.values(userinput)[0])
-    checkAnswer()
+    console.log(userinput)
 }
 function checkAnswer(){
+    diff = 0
     for (let index = 0; index < userinput.length; index++) {
-        userinput[index] += 10
-        console.log(userinput[index])
+        switch(-Math.abs(userinput[index] - apmening[index])){
+            case -0:
+                diff +=5;
+                break;
+            case -1:
+                diff +=4;
+                break;
+            case -2:
+                diff +=3;
+
+        }
+        console.log(-Math.abs(diff[index]))
     }
+    console.log(diff, diff/10)
 }
