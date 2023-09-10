@@ -6,34 +6,11 @@
     <!-- Tittel på nettsideurlen -->
     <title>AP Valgomat</title>
 
-    <script>
-        function clickCounter() {
-          if (typeof(Storage) !== "undefined") {
-            if (localStorage.clickcount) {
-              localStorage.clickcount = Number(localStorage.clickcount)+5;
-            } else {
-              localStorage.clickcount = 5;
-            }
-            document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-            document.getElementById("result2").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-            document.getElementById("result3").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-          } else {
-            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-          }
-        }
-        </script>
-
     <link rel="stylesheet" type="text/css" href="AP.css">
 </head>
 <body>
     <!-- Overskrift på nettsiden -->
-    <h1 Id="myTitle">Arbeiderpartiets/AP Valgomat</h1>
-    <p><button onclick="clickCounter()" type="button">Enig</button></p>
-    <div id="result"></div>
-    <p><button onclick="clickCounter()" type="button">Nøytral</button></p>
-    <div id="result2"></div>
-    <p><button onclick="clickCounter()" type="button">Uenig</button></p>
-    <div id="result3"></div>
+    <h1 id="Title">Arbeiderpartiets/AP Valgomat</h1>
 
     <!-- Bilde på nettsiden -->
     <div class="valgomat">
@@ -48,6 +25,22 @@
         </form>
         <h2>Mer arbeidskraft?</h2>
         <form id="s2">
+            <label><input id=5 type="radio" value="HTML" onchange="test(this)">Veldig Enig</label><br>
+            <label><input id=4 type="radio" value="HTML" onchange="test(this)">Litt Enig</label><br>
+            <label><input id=3 type="radio" value="HTML" onchange="test(this)">Nøytral</label><br>
+            <label><input id=2 type="radio" value="HTML" onchange="test(this)">Litt Uenig</label><br>
+            <label><input id=1 type="radio" value="HTML" onchange="test(this)">Veldig Uenig</label><br>
+        </form>
+        <h2>Mer arbeidskraft?</h2>
+        <form id="s3">
+            <label><input id=5 type="radio" value="HTML" onchange="test(this)">Veldig Enig</label><br>
+            <label><input id=4 type="radio" value="HTML" onchange="test(this)">Litt Enig</label><br>
+            <label><input id=3 type="radio" value="HTML" onchange="test(this)">Nøytral</label><br>
+            <label><input id=2 type="radio" value="HTML" onchange="test(this)">Litt Uenig</label><br>
+            <label><input id=1 type="radio" value="HTML" onchange="test(this)">Veldig Uenig</label><br>
+        </form>
+        <h2>Mer arbeidskraft?</h2>
+        <form id="s4">
             <label><input id=5 type="radio" value="HTML" onchange="test(this)">Veldig Enig</label><br>
             <label><input id=4 type="radio" value="HTML" onchange="test(this)">Litt Enig</label><br>
             <label><input id=3 type="radio" value="HTML" onchange="test(this)">Nøytral</label><br>
