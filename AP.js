@@ -1,36 +1,48 @@
-var textElement = document.getElementById("myTitle")
-textElement.style.color = "red";
+prevButton = [];
 
-prevButton = 0;
-
-//Skift disse to til arrays
-const userinput = {};
-const apmening = {
-    0: 0,
-    1: 0
-};
+const userinput = [];
+const apmening = [2, 5];
 function test(input){
 
-    console.log(input.parentNode.parentNode.id);
-    if (prevButton && prevButton.parentNode.parentNode.id == input.parentNode.parentNode.id) {prevButton.parentNode.style.color = "black";}
+    //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
+    for (let index = 0; index < prevButton.length; index++) {
+        if(prevButton[index].parentNode.parentNode.id == input.parentNode.parentNode.id){
+            prevButton[index].parentNode.style.color = "black";
+        }
+        
+    }
+    //Gjør den nye valgte knappen grønn, og setter checked-attributten til false slik at onchange() funker riktig
     input.parentNode.style.color = "green";
     input.checked = false;
-    prevButton = input;
-    switch (input.parentNode.parentNode.id) {
-        case "s1":
-            userinput[0] = Number(input.id);
-            break;
-        case "s2":
-            userinput[1] = Number(input.id);
-        default:
-            break;
-    }
-    console.log(userinput, Object.keys(userinput), Object.values(userinput)[0])
-    checkAnswer()
+
+    //Setter knappen som har blitt trykket i listen over knapper som har blitt trykket før
+    prevButton.push(input);
+
+    //Plasserer riktig poengsum basert på svar i riktig index på array basert på id-en til spørsmålet
+    userinput[Number(input.parentNode.parentNode.id.split("")[1]) - 1] = Number(input.id)
+
+    console.log(userinput)
 }
 function checkAnswer(){
+    diff = 0
     for (let index = 0; index < userinput.length; index++) {
-        userinput[index] += 10
-        console.log(userinput[index])
+        switch(-Math.abs(userinput[index] - apmening[index])){
+            case -0:
+                diff +=5;
+                break;
+            case -1:
+                diff +=4;
+                break;
+            case -2:
+                diff +=2;
+                break;
+            case -3:
+                diff +=1;
+                break;
+            case -4:
+                diff+= 0;
+        }
+        console.log(-Math.abs(diff[index]))
     }
+    console.log(diff, diff/(apmening.length*5))
 }
