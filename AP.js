@@ -1,7 +1,7 @@
 prevButton = [];
 
 const userinput = [];
-const apmening = [2, 5];
+const apmening = [4, 4, 1, 1, 5, 5, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1];
 function test(input){
 
     //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
@@ -19,7 +19,12 @@ function test(input){
     prevButton.push(input);
 
     //Plasserer riktig poengsum basert på svar i riktig index på array basert på id-en til spørsmålet
-    userinput[Number(input.parentNode.parentNode.id.split("")[1]) - 1] = Number(input.id)
+    if(input.parentNode.parentNode.id.length >2){
+        userinput[Number(input.parentNode.parentNode.id.split("")[1] + input.parentNode.parentNode.id.split("")[2]) - 1] = Number(input.id)
+    }
+    else{
+        userinput[Number(input.parentNode.parentNode.id.split("")[1]) - 1] = Number(input.id)
+    }
 
     console.log(userinput)
 }
