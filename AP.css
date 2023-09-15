@@ -21,18 +21,6 @@
   width: 50%;
 }
 
-input[type="radio"] {
-  display: none; /* Hide the default radio button */
-}
-
-label {
-  cursor: pointer;
-}
-
-input[type="radio"]:checked + label {
-  color: green; /* Style the label when the radio button is checked */
-  font-weight: bold;
-}
 
 #meny {
   text-align: center;
@@ -78,4 +66,39 @@ input[type="radio"]:checked + label {
   top: 0px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.InfoTxt{
+  text-align: left;
+  display: inline-block;
+  width: 50%;
+}
+#bodyinfo{
+  text-align: center;
+}
+
+#webcolor{
+  background-color: red;
+  width: 150%;
+  height: 100px;
+}
+
+  input[type="radio"] {
+    display: none; /* Hide the default radio button */
+  }
+  
+  label {
+    cursor: pointer;
+  }
+=======
+input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  color: green; /* Style the label when the radio button is checked */
+  font-weight: bold;
 }
