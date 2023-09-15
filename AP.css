@@ -1,26 +1,72 @@
 * {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
-#Title{
+#Title {
   color: red;
 }
 .image-container {
   text-align: center;
   width: 70%;
 }
-.images{
+.images {
   display: inline;
   right: 20px;
   width: 20%;
   float: right;
   margin-right: 10%;
 }
-.valgomat{
+.valgomat {
   text-align: center;
   display: inline-block;
   width: 50%;
 }
 
+
+#meny {
+  text-align: center;
+}
+.menyvalg {
+  position: relative;
+  display: inline-flex;
+  width: 30%;
+  text-align: center;
+  transition: 1s;
+  margin: 7em 4em 7em 4em;
+  padding: 1em 1em 1em 1em;
+  background-size: cover;
+  font-size: 1.2em;
+}
+#box-container {
+  text-align: center;
+}
+#AP-tittel {
+  width: 40%;
+}
+.menyvalg-img {
+  height: 15em;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+.menyvalg-tekst {
+  z-index: 2;
+}
+#tavalgomat{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#ompartiet{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .InfoTxt{
   text-align: left;
   display: inline-block;
@@ -43,12 +89,16 @@
   label {
     cursor: pointer;
   }
+=======
+input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
 
-  input[type="radio"]:checked + label {
-    color: green; /* Style the label when the radio button is checked */
-    font-weight: bold;
-  }
-    
-  .menyvalg{
-    display: inline;
-  }
+label {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  color: green; /* Style the label when the radio button is checked */
+  font-weight: bold;
+}
