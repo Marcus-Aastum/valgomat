@@ -21,6 +21,21 @@
   width: 50%;
 }
 
+.InfoTxt{
+  text-align: left;
+  display: inline-block;
+  width: 50%;
+}
+#bodyinfo{
+  text-align: center;
+}
+
+#webcolor{
+  background-color: red;
+  width: 150%;
+  height: 100px;
+}
+
   input[type="radio"] {
     display: none; /* Hide the default radio button */
   }
