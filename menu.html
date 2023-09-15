@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbeiderpartiet</title>
+    <link rel="stylesheet" href="AP.css">
 </head>
-<body>
-    <h1 id="AP-tittel">Arbeiderpartiet</h1>
-
-    <div class="menyvalg" id="tavalgomatcont">
-        <h4 class="menyvalg-tekst" id="tavalgomat">Ta vår valgomat</h4>
+<body id="meny">
+    <img id="AP-tittel" src="aptekstlogo.png"><img>
+    <div id="box-container">
+        <div class="menyvalg" id="tavalgomatcont" onclick="window.location.href='AP.html'" onmouseenter="onMouse(this)" onmouseleave="removeMouse(this)">
+            <img class="menyvalg-img" id="valgimg" src="standard_valgurne.jpg" alt="">
+            <h2 class="menyvalg-tekst" id="tavalgomat">Ta vår valgomat</h2>
+        </div>
+        <div class="menyvalg" id="ompartietcont" onmouseenter="onMouse(this)" onmouseleave="removeMouse(this)"">
+            <img class="menyvalg-img" id="omimg" src="sentralstyreAP.jpg" alt="">
+           <h2 class="menyvalg-tekst" id="ompartiet">Om partiet</h2>
+        </div>
     </div>
-    <div class="menyvalg" id="ompartietcont">
-       <h4 class="menyvalg-tekst" id="ompartiet">Om partiet</h4>
-    </div>
+    <script src="AP.js"></script>
 </body>
 </html>
