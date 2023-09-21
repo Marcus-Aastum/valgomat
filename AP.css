@@ -5,6 +5,10 @@
 body{
   margin: 0px;
 }
+/* Det gjør at linkene ikke endrer farge og bare er denne blåfargen. */
+a:visited {
+  color: rgb(1, 146, 219);
+}
 
 #webcolor{ /*Top navbar*/
   background-color: #d70926;
@@ -21,12 +25,13 @@ body{
 }
 
 /* ---Valgomat--- */
-
+/* Endrer tillelen til fargen rød, endrer posisjon til midten og størrelse. */
 #Title {
   color: #d70926;
   text-align: center;
   font-size: 3em;
 }
+/* Smler */
 .image-container {
   text-align: center;
   width: 70%;
