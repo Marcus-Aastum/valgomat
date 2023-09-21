@@ -11,9 +11,11 @@
 .images {
   display: inline;
   right: 20px;
-  width: 20%;
+  width: 25%;
   float: right;
   margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 .valgomat {
   text-align: center;
@@ -89,7 +91,7 @@
   label {
     cursor: pointer;
   }
-=======
+
 input[type="radio"] {
   display: none; /* Hide the default radio button */
 }
@@ -101,4 +103,8 @@ label {
 input[type="radio"]:checked + label {
   color: green; /* Style the label when the radio button is checked */
   font-weight: bold;
+}
+
+body{
+  margin:0px;
 }
