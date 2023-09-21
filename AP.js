@@ -29,6 +29,23 @@ function removeMouse(element) {
 let userinput = [];
 const apmening = [4, 4, 1, 1, 5, 5, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1];
 let prevButton = [];
+const sporsmal = ["Midtbyen må stenges for privatbiler flere steder", 
+"Det bør være mulig å bygge flere høyhus i Trondheim", 
+"Det skal legges til rette for flere private helsetilbud",
+"Eiendomskatten må reduseres",
+"Det skal bli flere gågater i midtbyen",
+"Fjerne kontantstøtten for å skape flere barnehageplasser",
+"Fjerne Abortnemndsystemet mellom uke 12 og 18",
+"Øke fordelene til BSU Sparing",
+"Jernbanen skal forbli privatisert",
+"Bør vi sikte på å nå Nato's mål av å bruke 2% av BNP på forsvaret",
+"Vinmonopolet bør ta over driften av alkoholsalg i Tax-Free butikker",
+"Personer tatt med brukerdoser av rus bør få hjelp istedenfor straff",
+"Staten bruker for mye penger på utstyrsstipend",
+"Verneplikten er for streng og bør avvikles",
+"Det skal være karakterbasert inntak på videregående skoler",
+"Vi bør gi fra oss statlig eierskap i flere selskap, som Statkraft"];
+const valg = ["Helt Uenig", "Litt Uenig", "Nøytral", "Litt Enig", "Helt Enig"]
 // Funksjon som kjøres hver gang brukeren trykker en knapp
 function valgomatInput(input) {
   //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
@@ -77,4 +94,45 @@ function checkAnswer() {
   }
   let prosentEnighet = diff / (apmening.length * 5) * 100; //Regner ut hvor enig man er i prosent
   document.getElementById("enighet").innerHTML = "Du er " + Math.round(prosentEnighet*10)/10 + "% enig med Arbeiderpartiet" //Skriver enighet til skjermen
+  
+}
+//Funksjon som plasserer spørsmålene i valgomaten
+function makeSpm(){
+  const valgomatdiv = document.getElementsByClassName("valgomat")[0]; //definerer div til valgomaten
+  //For loop som iterer gjennom spørsmålene
+  for (let index = 0; index < sporsmal.length; index++) {
+    //lager undertittelen
+    const tittel = document.createElement("h2");
+    const node = document.createTextNode(sporsmal[index]);
+    tittel.appendChild(node);
+    valgomatdiv.appendChild(tittel);
+
+    //Lager form hvor spørsmål plasseres i
+    const form = document.createElement("form");
+    form.id = "s"+ String(index + 1);
+    //For loop som plasserer svaralternativene
+    for (let n = 4; n >= 0; n--) {
+      const label = document.createElement("label");
+
+      //Lager input-element med tilhørende attributter
+      const inputel = document.createElement("input");
+      inputel.id = n + 1;
+      inputel.type = "radio";
+      inputel.value = "HTML";
+      inputel.setAttribute("onclick", "valgomatInput(this)");
+      const inputnode = document.createTextNode(valg[n]);
+
+      //Plasserer elementene i formen
+      label.appendChild(inputel);
+      label.appendChild(inputnode);
+      form.appendChild(label);
+      form.appendChild(document.createElement("br"));
+    }
+    //Plaserer spørsmålet i dokumentet
+    valgomatdiv.appendChild(form);
+    
+  }
+}
+if (window.location.pathname === "/Valgomat/"){
+  makeSpm();
 }

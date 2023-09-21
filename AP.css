@@ -25,13 +25,11 @@ a:visited {
 }
 
 /* ---Valgomat--- */
-/* Endrer tillelen til fargen rød, endrer posisjon til midten og størrelse. */
 #Title {
   color: #d70926;
   text-align: center;
   font-size: 3em;
 }
-/* Smler */
 .image-container {
   text-align: center;
   width: 70%;
@@ -146,6 +144,7 @@ border-radius: 20px;
   text-align: left;
   display: inline-block;
   width: 50%;
+  padding-bottom: 5%;
 }
 #bodyinfo{
   text-align: center;
