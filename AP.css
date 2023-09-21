@@ -11,9 +11,11 @@
 .images {
   display: inline;
   right: 20px;
-  width: 20%;
+  width: 25%;
   float: right;
   margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 .valgomat {
   text-align: center;
