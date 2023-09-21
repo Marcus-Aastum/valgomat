@@ -1,7 +1,10 @@
-prevButton = [];
 
-const userinput = [];
+
+//---Valgomat---
+let userinput = [];
 const apmening = [4, 4, 1, 1, 5, 5, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1];
+let prevButton = [];
+// Funksjon som kjøres hver gang brukeren trykker en knapp
 function valgomatInput(input) {
   //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
   for (let index = 0; index < prevButton.length; index++) {
@@ -31,9 +34,9 @@ function valgomatInput(input) {
       input.id
     );
   }
-
-  console.log(userinput);
 }
+
+//Funksjon kalles når bruker trykker knapp for å sjekke svar
 function checkAnswer() {
   let diff = 0;
   for (let index = 0; index < userinput.length; index++) {
@@ -80,8 +83,3 @@ function onMouse(element) {
   element.style.transition = "0.5s";
   element.style.cursor = "pointer";
 }
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    // true for mobile device
-    document.getElementById("omimg").style.opacity = 1;
-    document.getElementById("valgimg").style.opacity = 1;
-  }

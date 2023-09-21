@@ -1,8 +1,31 @@
+/* ---Felles--- */
 * {
   font-family: Arial, sans-serif;
 }
+body{
+  margin: 0px;
+}
+
+#webcolor{ /*Top navbar*/
+  background-color: #d70926;
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+#logoimg{
+  height: auto;
+  margin: 20px;
+  }
+#logoimg:hover{
+  cursor: pointer;
+}
+
+/* ---Valgomat--- */
+
 #Title {
-  color: red;
+  color: #d70926;
+  text-align: center;
+  font-size: 3em;
 }
 .image-container {
   text-align: center;
@@ -22,7 +45,47 @@
   display: inline-block;
   width: 50%;
 }
+input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+label {
+cursor: pointer;
+}
 
+#sjekksvar{
+background-color: white;
+border: 2px solid #f44336;  
+color: black;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin: 4px 2px;
+transition-duration: 0.5s;
+cursor: pointer;
+border-radius: 100px;
+}
+#sjekksvar:hover{
+background-color: red;
+color: white;
+}
+
+.svarcont{
+margin-top: 2em;
+margin-right: 20%;
+margin-left: 20%;
+margin-bottom: 2em;
+text-align: center;
+font-size: 2em;
+font-weight: bold;
+background-color: #d70926;
+color: white;
+padding: 1em;
+border-radius: 20px;
+}
+
+/* ---Menyside--- */
 
 #meny {
   text-align: center;
@@ -69,6 +132,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* ---Infoside--- */
+
 .InfoTxt{
   text-align: left;
   display: inline-block;
@@ -76,59 +142,4 @@
 }
 #bodyinfo{
   text-align: center;
-}
-
-#webcolor{
-  background-color: red;
-  width: 100%;
-  height: 100px;
-  display: flex;
-}
-
-  input[type="radio"] {
-    display: none; /* Hide the default radio button */
-  }
-  
-  label {
-    cursor: pointer;
-  }
-
-input[type="radio"] {
-  display: none; /* Hide the default radio button */
-}
-
-label {
-  cursor: pointer;
-}
-
-body{
-  margin: 0px;
-}
-#enighet{
-  font-size: larger;
-  font-weight: bold;
-}
-#sjekksvar{
-  background-color: white; /* Green */
-  border: 2px solid #f44336;  
-  color: black;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.5s;
-  cursor: pointer;
-}
-#sjekksvar:hover{
-  background-color: red;
-  color: white;
-}
-#logoimg{
-  height: auto;
-  margin: 20px;
-}
-#logoimg:hover{
-  cursor: pointer;
 }

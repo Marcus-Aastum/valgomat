@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tittel på nettsideurlen -->
-    <title>AP Valgomat</title>
+    <title>Valgomat</title>
 
     <link rel="stylesheet" type="text/css" href="AP.css">
     <link rel="shortcut icon" href="Arbeiderpartiet_rosesymbol_rod_RGB.svg" type="image/x-icon">
@@ -14,7 +14,7 @@
         <img onclick="window.location.href = 'menu.html'" id="logoimg" src="Arbeiderpartiet_hovedlogo_negativ_RGB.png" alt="">
     </div>
     <!-- Overskrift på nettsiden -->
-    <h1 id="Title">Arbeiderpartiets Valgomat</h1>
+    <h1 id="Title">Valgomat</h1>
 
     <!-- Bilde på nettsiden -->
     <div class="valgomat">
@@ -168,8 +168,10 @@
     </div>
     <br>
     <!-- Tekst -->
-    <button id="sjekksvar" onclick="checkAnswer()">Sjekk svar</button>
-    <p id="enighet">Du er xx% enig med Arbeiderpartiet</p>
+    <div class="svarcont">
+        <button id="sjekksvar" onclick="checkAnswer()">Sjekk svar</button>
+        <p id="enighet">Du er xx% enig med Arbeiderpartiet</p>
+    </div>
     <!-- Et script for å koble html filen til javascriptfilen -->
     <script src="AP.js"></script>
     <style src="AP.css"></style>
