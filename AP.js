@@ -5,15 +5,14 @@ const apmening = [4, 4, 1, 1, 5, 5, 5, 2, 2, 5, 4, 4, 1, 1, 2, 1];
 function valgomatInput(input) {
   //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
   for (let index = 0; index < prevButton.length; index++) {
-    if (
-      prevButton[index].parentNode.parentNode.id ==
-      input.parentNode.parentNode.id
-    ) {
+    if (prevButton[index].parentNode.parentNode.id == input.parentNode.parentNode.id) {
       prevButton[index].parentNode.style.color = "black";
+      prevButton[index].parentNode.style.fontWeight = 400;
     }
   }
   //Gjør den nye valgte knappen grønn, og setter checked-attributten til false slik at onchange() funker riktig
   input.parentNode.style.color = "green";
+  input.parentNode.style.fontWeight = 700;
   input.checked = false;
 
   //Setter knappen som har blitt trykket i listen over knapper som har blitt trykket før
@@ -56,7 +55,9 @@ function checkAnswer() {
     }
     console.log(-Math.abs(diff[index]));
   }
-  console.log(diff, diff / (apmening.length * 5));
+  let prosentEnighet = diff / (apmening.length * 5) * 100;
+  document.getElementById("enighet").innerHTML = "Du er " + prosentEnighet + "% enig med Arbeiderpartiet"
+  console.log(diff, diff / prosentEnighet);
 }
 
 function removeMouse(element) {
