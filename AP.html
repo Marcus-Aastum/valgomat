@@ -7,9 +7,11 @@
     <title>Valgomat</title>
 
     <link rel="stylesheet" type="text/css" href="AP.css">
+    <!-- Lenke til nettsideikonet -->
     <link rel="shortcut icon" href="Arbeiderpartiet_rosesymbol_rod_RGB.svg" type="image/x-icon">
 </head>
 <body>
+    <!-- Øverste navbar på siden -->
     <div id="webcolor">
         <img onclick="window.location.href = 'menu.html'" id="logoimg" src="Arbeiderpartiet_hovedlogo_negativ_RGB.png" alt="">
     </div>
@@ -21,6 +23,7 @@
         <!-- Underoverskrift med en liste med svaralternativer -->
         <h2>Midtbyen må stenges for privatbiler flere steder</h2>
         <form id="s1">
+            <!-- 5 svaralternativ -->
             <label><input id=5 type="radio" value="HTML" onchange="valgomatInput(this)">Helt Enig</label><br>
             <label><input id=4 type="radio" value="HTML" onchange="valgomatInput(this)">Litt Enig</label><br>
             <label><input id=3 type="radio" value="HTML" onchange="valgomatInput(this)">Nøytral</label><br>
@@ -148,6 +151,7 @@
             <label><input id=1 type="radio" value="HTML" onchange="valgomatInput(this)">Helt Uenig</label><br>
         </form>
     </div>
+    <!-- Bildene på siden av valgomaten -->
     <div class="images">
         <img src="aplogo500.jpg" class="image-container"></img>
         <br>
@@ -167,13 +171,12 @@
         <img src="AnnenAP-bod.jpg" class="image-container"></img>
     </div>
     <br>
-    <!-- Tekst -->
+    <!-- Resultat av valgomaten -->
     <div class="svarcont">
         <button id="sjekksvar" onclick="checkAnswer()">Sjekk svar</button>
-        <p id="enighet">Du er xx% enig med Arbeiderpartiet</p>
+        <p id="enighet">Du er -% enig med Arbeiderpartiet</p>
     </div>
-    <!-- Et script for å koble html filen til javascriptfilen -->
+    <!-- Script for å koble html filen til javascriptfilen -->
     <script src="AP.js"></script>
-    <style src="AP.css"></style>
 </body>
 </html>

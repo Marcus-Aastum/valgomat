@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbeiderpartiet</title>
     <link rel="stylesheet" href="AP.css">
+    <!-- Ikon på siden -->
     <link rel="shortcut icon" href="Arbeiderpartiet_rosesymbol_rod_RGB.svg" type="image/x-icon">
 </head>
 
 <body id="meny">
-    <img id="AP-tittel" src="aptekstlogo.png"><img>
+    <!-- Logobilde -->
+    <img id="AP-tittel" src="Arbeiderpartiet_hovedlogo_rod_RGB.svg"><img> 
+    <!-- Container med to knapper -->
     <div id="box-container">
+        <!-- Knapp med funksjoner når mus går over/fjernes, samt når den trykkes på -->
         <div class="menyvalg" id="tavalgomatcont" onclick="window.location.href='AP.html'" onmouseenter="onMouse(this)" onmouseleave="removeMouse(this)">
-            <img class="menyvalg-img" id="valgimg" src="standard_valgurne.jpg" alt="">
+            <!-- Bilde som vises når mus er over -->
+            <img class="menyvalg-img" id="valgimg" src="standard_valgurne.jpg" alt=""> 
             <h2 class="menyvalg-tekst" id="tavalgomat">Ta vår valgomat</h2>
         </div>
+            <!-- Knapp med funksjoner når mus går over/fjernes, samt når den trykkes på -->
         <div class="menyvalg" id="ompartietcont" onclick="window.location.href='InfoAP.html'" onmouseenter="onMouse(this)" onmouseleave="removeMouse(this)"">
+            <!-- Bilde som vises når mus er over -->
             <img class="menyvalg-img" id="omimg" src="sentralstyreAP.jpg" alt="">
-           <h2 class="menyvalg-tekst" id="ompartiet">Om partiet</h2>
+            <h2 class="menyvalg-tekst" id="ompartiet">Om partiet</h2>
         </div>
     </div>
+    <!-- Linker html til script -->
     <script src="AP.js"></script>
 </body>
 </html>
