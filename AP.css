@@ -80,8 +80,9 @@
 
 #webcolor{
   background-color: red;
-  width: 150%;
+  width: 100%;
   height: 100px;
+  display: flex;
 }
 
   input[type="radio"] {
@@ -100,11 +101,34 @@ label {
   cursor: pointer;
 }
 
-input[type="radio"]:checked + label {
-  color: green; /* Style the label when the radio button is checked */
+body{
+  margin: 0px;
+}
+#enighet{
+  font-size: larger;
   font-weight: bold;
 }
-
-body{
-  margin:0px;
+#sjekksvar{
+  background-color: white; /* Green */
+  border: 2px solid #f44336;  
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+#sjekksvar:hover{
+  background-color: red;
+  color: white;
+}
+#logoimg{
+  height: auto;
+  margin: 20px;
+}
+#logoimg:hover{
+  cursor: pointer;
 }
