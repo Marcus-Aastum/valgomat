@@ -49,14 +49,35 @@ const valg = ["Helt Uenig", "Litt Uenig", "Nøytral", "Litt Enig", "Helt Enig"]
 // Funksjon som kjøres hver gang brukeren trykker en knapp
 function valgomatInput(input) {
   //Sjekker om en knapp i samme spørsmål har blitt trykket før, isåfall gjør den gamle knappen svart
-  for (let index = 0; index < prevButton.length; index++) {
+  let index = 0
+  let spmIndex = NaN
+  input.parentNode.style.color = "green";
+  switch (input.parentNode.parentNode.id.length) {
+    case 2:
+      spmIndex = input.parentNode.parentNode.id.split("")[1]
+      break;
+    case 3:
+      spmIndex = input.parentNode.parentNode.id.split("")[1] + input.parentNode.parentNode.id.split("")[2]
+      break;
+    default:
+      break;
+  }
+  for (index = 0; index < prevButton.length; index++) {
     if (prevButton[index].parentNode.parentNode.id == input.parentNode.parentNode.id) {
       prevButton[index].parentNode.style.color = "black";
       prevButton[index].parentNode.style.fontWeight = 400;
     }
   }
-  //Gjør den nye valgte knappen grønn, og setter checked-attributten til false slik at onchange() funker riktig
-  input.parentNode.style.color = "green";
+  //Om AP og bruker har valgt det samme, gjør valgt knapp Oransje
+  if (input.id == apmening[Number(spmIndex) - 1]){
+    input.parentNode.style.color = "orange";
+  }
+  //Om AP og bruker velger forskjellig, gjør AP sitt valg rødt og bruker sitt valgt grønt
+  else if(input.id != apmening[Number(spmIndex) - 1]){
+    input.parentNode.style.color = "green";
+    document.querySelector("#"+"s" + spmIndex +" "+ ".a" +apmening[Number(spmIndex)-1]).parentNode.style.color = "red";
+  }
+  //Gjør valgt element bold og gjør checked til false for at onChange() skal funke
   input.parentNode.style.fontWeight = 700;
   input.checked = false;
 
@@ -64,18 +85,15 @@ function valgomatInput(input) {
   prevButton.push(input);
 
   //Plasserer riktig poengsum basert på svar i riktig index på array basert på id-en til spørsmålet
-  if (input.parentNode.parentNode.id.length > 2) {
-    userinput[Number(input.parentNode.parentNode.id.split("")[1] + input.parentNode.parentNode.id.split("")[2]) - 1] = Number(input.id);
-  } else {
-    userinput[Number(input.parentNode.parentNode.id.split("")[1]) - 1] = Number(input.id);
-  }
+  userinput[Number(spmIndex) - 1] = Number(input.id);
 }
 
 //Funksjon kalles når bruker trykker knapp for å sjekke svar
 function checkAnswer() {
   let diff = 0;
   for (let index = 0; index < userinput.length; index++) {
-    switch (-Math.abs(userinput[index] - apmening[index])) { //gi positiv poengsum basert på hvor langt unna AP man var
+    //gi positiv poengsum basert på hvor langt unna AP man var
+    switch (-Math.abs(userinput[index] - apmening[index])) { 
       case -0:
         diff += 5;
         break;
@@ -117,6 +135,7 @@ function makeSpm(){
       //Lager input-element med tilhørende attributter
       const inputel = document.createElement("input");
       inputel.id = n + 1;
+      inputel.className = "a"+String(n+1);
       inputel.type = "radio";
       inputel.value = "HTML";
       inputel.setAttribute("onclick", "valgomatInput(this)");
